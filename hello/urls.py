@@ -1,6 +1,7 @@
-from django.conf.urls import urls
-from . import views
+from django.conf.urls import include, url
+from django.contrib import admin
 
 urlpatters = [
-    url(r'^$', views.index, name='index'),
-    ]
+    url(r'^hello/',include('hello.urls')),
+    url(r'^admin/', admin.site.urls),
+]
