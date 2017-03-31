@@ -4,5 +4,6 @@ from django.db import models
 
 # Create your models here.
 class PageCount(models.Model):
-    page = models.URLField(default='defaultURL')
+    # page = models.URLField(default='defaultURL')
+    page = models.TextField(default='defaultURL')
     count = models.IntegerField(default=0)
