@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     #custom apps
-    'hello',
+    'hello.apps.HelloConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
