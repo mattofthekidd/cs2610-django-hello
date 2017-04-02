@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import time
 from .models import PageCount
+from .models import Horoscope
 
 # Create your views here.
 def index(request):
@@ -11,4 +12,13 @@ def index(request):
     row.count += 1
     # save the value
     row.save()
-    return HttpResponse("Hello, world. </br>time: " + time.strftime("%c") + "</br>visisted #" + str(row.count)) 
+    
+    horo, create = Horoscope.objects.get_or_create(today='index')
+    
+    return HttpResponse("Hello, world. </br>time: " + time.strftime("%c") + "</br>visisted #" + str(row.count) + " " + horo) 
+    
+    
+# git clone https://github.com/sandipbgt/theastrologer-api.git
+# cd theastrologer-api
+# pip install -r requirements.txt
+# gunicorn app:app
