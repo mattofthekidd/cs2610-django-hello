@@ -10,8 +10,8 @@ class PageCount(models.Model):
     count = models.IntegerField(default=0)
     
 class Horoscope(models.Model):
+    scope = models.TextField(default='defaultURL')
     today = models.URLField(default='http://sandipbgt.com/theastrologer/api/horoscope/cancer/today')
-    
     { "yesterday": "http://sandipbgt.com/theastrologer/api/horoscope/{sunsign}/yesterday", 
     "sunsign_list": "http://sandipbgt.com/theastrologer/api/sunsigns", 
     "today": "http://sandipbgt.com/theastrologer/api/horoscope/{sunsign}/today", 

@@ -13,9 +13,8 @@ def index(request):
     # save the value
     row.save()
     
-    horo, create = Horoscope.objects.get_or_create(today='index')
-    
-    return HttpResponse("Hello, world. </br>time: " + time.strftime("%c") + "</br>visisted #" + str(row.count) + " " + horo) 
+    horo, create = Horoscope.objects.get_or_create(scope='index')
+    return HttpResponse("Hello, world. </br>time: " + time.strftime("%c") + "</br>visisted #" + str(row.count)) 
     
     
 # git clone https://github.com/sandipbgt/theastrologer-api.git
